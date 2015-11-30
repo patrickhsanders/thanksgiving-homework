@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIPickerView *minutePicker;
@@ -14,6 +15,7 @@
 @property (nonatomic, strong) NSTimer *timerToFinish;
 @property (nonatomic, strong) NSTimer *viewTimer;
 @property (nonatomic) NSUInteger countdownTimeInSeconds;
+@property (nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation ViewController {
@@ -22,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"alarm" withExtension:@"mp3"];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    [self.audioPlayer prepareToPlay];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -82,8 +86,7 @@
     NSLog(@"Timer done");
     [self.viewTimer invalidate];
     self.outputDisplay.text = @"0:00";
-//    NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"pew-pew-lei"
-//                                              withExtension:@"caf"];
+    [self.audioPlayer play];
 //    AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &sound1);
 //    AudioServicesPlayAlertSound(sound1);
     AudioServicesPlaySystemSound (1003);
