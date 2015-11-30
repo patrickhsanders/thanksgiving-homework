@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-zN-d1C">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="264"/>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3W-e8-giV">
+                                <rect key="frame" x="0.0" y="272" width="600" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Reverse"/>
+                                <connections>
+                                    <action selector="convertText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HCK-qJ-MCF"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Zv-ICU">
+                                <rect key="frame" x="0.0" y="310" width="600" height="290"/>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DhH-Zv-ICU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5Y2-6K-aBC"/>
+                            <constraint firstItem="Kdu-zN-d1C" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="25" id="H1B-6m-DhD"/>
+                            <constraint firstItem="Kdu-zN-d1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LoY-0a-oy3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DhH-Zv-ICU" secondAttribute="trailing" id="POh-hu-LaM"/>
+                            <constraint firstItem="y3W-e8-giV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ska-LW-ErR"/>
+                            <constraint firstItem="y3W-e8-giV" firstAttribute="top" secondItem="Kdu-zN-d1C" secondAttribute="bottom" constant="8" id="atA-fG-9sx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y3W-e8-giV" secondAttribute="trailing" constant="-20" id="eMc-kh-ZDP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kdu-zN-d1C" secondAttribute="trailing" id="gTb-b6-00Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DhH-Zv-ICU" secondAttribute="bottom" constant="15" id="mdf-DE-WOW"/>
+                            <constraint firstItem="DhH-Zv-ICU" firstAttribute="top" secondItem="y3W-e8-giV" secondAttribute="bottom" constant="8" id="oWQ-Fa-G2r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputText" destination="Kdu-zN-d1C" id="xMg-0l-7bK"/>
+                        <outlet property="outputText" destination="DhH-Zv-ICU" id="6x1-aZ-rsk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="301"/>
+        </scene>
+    </scenes>
+</document>
